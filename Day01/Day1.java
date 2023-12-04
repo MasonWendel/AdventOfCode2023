@@ -3,7 +3,7 @@ import java.io.*;
 
 public class Day1 {
     public static void main(String[] args) throws IOException {
-        Scanner in = new Scanner(new File("testinput.dat"));
+        Scanner in = new Scanner(new File("input.dat"));
 
         int biggest = 0; 
 
@@ -18,8 +18,8 @@ public class Day1 {
             String line  = in.nextLine();
 
             for (String[] strings : strs) {
-                if(line.contains(strings[0])){
-                    line = line.substring(0, line.indexOf(strings[0]))+strings[1]+line.substring(line.indexOf(strings[0])+1);
+                while(line.contains(strings[0])){
+                    line = line.substring(0, line.indexOf(strings[0])+1)+strings[1]+line.substring(line.indexOf(strings[0])+1);
                 }
             }
 
